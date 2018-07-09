@@ -1,0 +1,50 @@
+#:kivy 1.0
+
+<Controller>:
+    canvas.before:
+        Color:
+            rgba: 1, 1,2, 0.97
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    rows: 1
+    size_hint: (1, None)
+    height: 50
+    spacing: 5
+    padding: 5
+    ToggleButton:
+        group: 'controller'
+        text: 'Accueil '
+        state: 'down'
+        on_press: 
+            app.manager.current = 'Accueil'
+            if self.state == 'normal': self.state = 'down'
+    ToggleButton:
+        group: 'controller'
+        text: 'Journal LeFigaro '
+        on_press: 
+            app.manager.current = 'Lefigaro'
+            if self.state == 'normal': self.state = 'down'
+    ToggleButton:
+        group: 'controller'
+        text: 'Journal LeMonde'
+        on_press: 
+            app.manager.current = 'LeMonde'
+            if self.state == 'normal': self.state = 'down'
+    ToggleButton:
+        group: 'controller'
+        text: 'Journal LePoint'
+        on_press: 
+            app.manager.current = 'LePoint'
+            if self.state == 'normal': self.state = 'down'
+    ToggleButton:
+        group: 'controller'
+        text: 'Journal Africain.info '
+        on_press: 
+            app.manager.current = 'Africain'
+            if self.state == 'normal': self.state = 'down'
+    
+        
+
+    
+            
